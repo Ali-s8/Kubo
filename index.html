@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+        }
+
+        header {
+            background-color: #0078D7;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #0078D7;
+            font-weight: bold;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .about {
+            text-align: center;
+        }
+
+        .about img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .project img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            margin: 20px 0;
+            color: #666;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #0078D7;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <p>A showcase of my work this semester</p>
+    </header>
+
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#projects">My Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <!-- Add your image here -->
+        <img src="your-photo.jpg" alt="Your Name">
+        <p>Hello! My name is [Your Name]. I am currently studying [Your Subject] and this semester I have worked on several exciting projects. I enjoy coding, designing, and learning new technologies!</p>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects">
+            <!-- Add project images here -->
+            <div class="project">
+                <img src="project1.jpg" alt="Project 1">
+            </div>
+            <div class="project">
+                <img src="project2.jpg" alt="Project 2">
+            </div>
+            <div class="project">
+                <img src="project3.jpg" alt="Project 3">
+            </div>
+            <!-- Add more project images as needed -->
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:[Your Email]">[Your Email]</a></p>
+        <p>GitHub: <a href="https://github.com/[Your GitHub Username]" target="_blank">github.com/[Your GitHub Username]</a></p>
+    </section>
+
+    <footer>
+        <p>© 2024 [Your Name] | <a href="https://github.com/[Your GitHub Username]" target="_blank">GitHub</a></p>
+    </footer>
+</body>
+</html>
