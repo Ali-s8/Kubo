@@ -1,136 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <style>
-        /* CSS Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f9f9f9;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f9;
+      color: #333;
+      line-height: 1.6;
+    }
 
-        header {
-            background-color: #0078D7;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-        }
+    header {
+      background: linear-gradient(135deg, #0078D7, #005bb5);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
 
-        header h1 {
-            margin: 0;
-        }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
 
-        nav {
-            text-align: center;
-            margin: 20px 0;
-        }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      opacity: 0.9;
+    }
 
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #0078D7;
-            font-weight: bold;
-        }
+    nav {
+      text-align: center;
+      background: white;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        section {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #0078D7;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
 
-        h2 {
-            color: #333;
-        }
+    nav a:hover {
+      color: #005bb5;
+    }
 
-        .about {
-            text-align: center;
-        }
+    section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      border-radius: 12px;
+    }
 
-        .about img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #0078D7;
+    }
 
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
+    /* About Section */
+    .about {
+      text-align: center;
+    }
 
-        .project img {
-            width: 100%;
-            border-radius: 8px;
-        }
+    .about img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 4px solid #0078D7;
+      object-fit: cover;
+    }
 
-        footer {
-            text-align: center;
-            margin: 20px 0;
-            color: #666;
-        }
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
 
-        footer a {
-            text-decoration: none;
-            color: #0078D7;
-        }
-    </style>
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project {
+      background: #fafafa;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .project img {
+      width: 100%;
+      display: block;
+    }
+
+    .project p {
+      padding: 1rem;
+      font-size: 0.95rem;
+      text-align: justify;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #0078D7;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #ffdf5e;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Porject</h1>
-        <p>A showcase of my work this semester</p>
-    </header>
+  <header>
+    <h1>Welcome to My Project</h1>
+    <p>A showcase of my work this semester</p>
+  </header>
 
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#projects">My Projects</a>
-    </nav>
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#projects">My Projects</a>
+  </nav>
 
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <!-- Add your image here -->
-        <img src="Projects/Me.jpg" class="img-responsive" alt="" />
-        <p>Hello! My name is Ali Omar Saboune, I was born in UAE March 21st, 2004, I am half Lebanese, half Filipino, I currently live in the Philippines in Dasma, Cavite, I am currently studying BSIT, I am an irregular student, I have classes with second and third year students and this semester I have worked on several projects.</p>
-    </section>
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <img src="Projects/Me.jpg" alt="Profile Photo">
+    <p>Hello! My name is <b>Ali Omar Saboune</b>. I was born in UAE on March 21st, 2004. I’m half Lebanese and half Filipino, and currently living in Dasmariñas, Cavite, Philippines. I am pursuing a degree in <b>BSIT</b> as an irregular student taking both 2nd and 3rd year subjects. This semester, I’ve worked on several projects that showcase my progress as a student and aspiring IT professional.</p>
+  </section>
 
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="projects">
-            <!-- Add project images here -->
-            <div class="project">
-                <img src="Projects/Lenux.jpg" alt="Project 1">
-                <p>Here we used the VM ware to create an OS of Linux it was my first time and it we pretty well so do I say.</p>
-            </div>
-            <div class="project">
-                <img src="Projects/1.png" alt="Project 2"><br>
-                <img src="Projects/2.png" alt="Project 2"><br>
-                <img src="Projects/3.png" alt="Project 2">
-                <p>Regarding this second part we worked some projects related to these lectures but it was all during classes so I have no picture of any of the projects that we wokrked on, but I can tell they need some work and ofcourse some time to study them.</p>
-            </div>
-            <div class="project">
-                <img src="Projects/4.png" alt="Project 3"><br>
-                <img src="Projects/5.png" alt="Project 3"><br>
-                <img src="Projects/6.png" alt="Project 3"><br>
-                <img src="Projects/7.png" alt="Project 3">
-                <p>These codes are pretty long so I shared the first page of each project that I worked on, they are about Object Oriented Programming, it's methods, attributes, Encapsulation, Interface, etc..., they are quite interesting and take some time to get things done for it needes a bit of creativity, that's it. </p>
-            </div>
-            <!-- Add more project images as needed -->
-        </div>
-    
-        <p>GitHub: <a href="https://github.com/Ali-s8" target="_blank">github.com/Ali-s8</a></p>
-        <p>Email: agsaboune@pcu.edu.ph</p>
-    </section>
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <img src="Projects/Lenux.jpg" alt="Project 1">
+        <p>I used VMware to create a Linux OS for the first time. It was a new experience, and I found it both challenging and rewarding.</p>
+      </div>
+      <div class="project">
+        <img src="Projects/1.png" alt="Project 2">
+        <img src="Projects/2.png" alt="Project 2">
+        <img src="Projects/3.png" alt="Project 2">
+        <p>These were class-based projects done during lectures. While I don’t have full documentation, I believe they need further refinement and deeper study.</p>
+      </div>
+      <div class="project">
+        <img src="Projects/4.png" alt="Project 3">
+        <img src="Projects/5.png" alt="Project 3">
+        <img src="Projects/6.png" alt="Project 3">
+        <img src="Projects/7.png" alt="Project 3">
+        <p>This set includes Object-Oriented Programming projects covering methods, attributes, encapsulation, and interfaces. They required problem-solving and creativity, making them some of my most interesting works.</p>
+      </div>
+    </div>
 
-    <footer>
-        <p>© 2024 Ali Saboune | <a href="https://github.com/Ali-s8" target="_blank">Ali-s8</a></p>
-    </footer>
+    <p style="text-align:center; margin-top: 2rem;">
+      <b>GitHub:</b> <a href="https://github.com/Ali-s8" target="_blank">github.com/Ali-s8</a> <br>
+      <b>Email:</b> <a href="mailto:agsaboune@pcu.edu.ph">agsaboune@pcu.edu.ph</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2024 Ali Saboune | <a href="https://github.com/Ali-s8" target="_blank">GitHub</a></p>
+  </footer>
 </body>
 </html>
