@@ -5,90 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
   <style>
-    /* General Styles */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* General Reset */
+    * {
       margin: 0;
       padding: 0;
-      background: #f4f6f9;
-      color: #333;
-      line-height: 1.6;
+      box-sizing: border-box;
     }
 
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: linear-gradient(to right, #eef2f3, #d9e4f5);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* Header */
     header {
-      background: linear-gradient(135deg, #0078D7, #005bb5);
+      background: linear-gradient(135deg, #0078D7, #00b4d8, #48cae4);
       color: white;
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 4rem 2rem;
+      animation: fadeInDown 1.2s ease-out;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
-      font-weight: 700;
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      animation: popIn 1.5s ease-out;
     }
 
     header p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       margin-top: 0.5rem;
       opacity: 0.9;
     }
 
+    /* Navigation */
     nav {
       text-align: center;
       background: white;
       padding: 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       position: sticky;
       top: 0;
       z-index: 1000;
+      animation: slideIn 1.5s ease-out;
     }
 
     nav a {
-      margin: 0 15px;
+      margin: 0 20px;
       text-decoration: none;
       color: #0078D7;
-      font-weight: 600;
-      transition: color 0.3s ease;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
     }
 
     nav a:hover {
-      color: #005bb5;
+      color: #00b4d8;
+      text-shadow: 0px 0px 10px #00b4d8;
+      transform: scale(1.1);
     }
 
+    /* Section */
     section {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 2rem;
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 3rem;
       background: white;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-      border-radius: 12px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      animation: fadeInUp 1.5s ease forwards;
     }
 
     h2 {
       text-align: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
       color: #0078D7;
+      font-size: 2rem;
+      position: relative;
     }
 
-    /* About Section */
+    h2::after {
+      content: "";
+      width: 60px;
+      height: 4px;
+      background: #00b4d8;
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* About */
     .about {
       text-align: center;
+      animation: zoomIn 1.5s ease-out;
     }
 
     .about img {
-      width: 180px;
-      height: 180px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
       margin-bottom: 1rem;
-      border: 4px solid #0078D7;
-      object-fit: cover;
+      border: 6px solid #00b4d8;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      animation: float 4s ease-in-out infinite;
     }
 
     .about p {
-      max-width: 700px;
+      max-width: 800px;
       margin: auto;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       line-height: 1.8;
     }
 
@@ -96,57 +125,102 @@
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     .project {
       background: #fafafa;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
       overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: fadeInUp 1.5s ease forwards;
     }
 
     .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
 
     .project img {
       width: 100%;
       display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .project:hover img {
+      transform: scale(1.1);
     }
 
     .project p {
       padding: 1rem;
-      font-size: 0.95rem;
+      font-size: 1rem;
       text-align: justify;
     }
 
     /* Footer */
     footer {
       text-align: center;
-      padding: 1.5rem;
-      background: #0078D7;
+      padding: 2rem;
+      background: linear-gradient(135deg, #0078D7, #00b4d8);
       color: white;
-      margin-top: 2rem;
+      margin-top: 3rem;
+      animation: fadeIn 2s ease-out;
     }
 
     footer a {
       text-decoration: none;
       color: #ffdf5e;
-      font-weight: 600;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
     footer a:hover {
-      text-decoration: underline;
+      color: #fff176;
+      text-shadow: 0 0 10px #fff176;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-100%); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Welcome to My Project</h1>
-    <p>A showcase of my work this semester</p>
+    <h1>Welcome to My Project 🚀</h1>
+    <p>A showcase of my creative journey this semester</p>
   </header>
 
   <nav>
@@ -182,7 +256,7 @@
       </div>
     </div>
 
-    <p style="text-align:center; margin-top: 2rem;">
+    <p style="text-align:center; margin-top: 2rem; font-size: 1.1rem;">
       <b>GitHub:</b> <a href="https://github.com/Ali-s8" target="_blank">github.com/Ali-s8</a> <br>
       <b>Email:</b> <a href="mailto:agsaboune@pcu.edu.ph">agsaboune@pcu.edu.ph</a>
     </p>
